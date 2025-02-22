@@ -21,26 +21,26 @@ function Home() {
       <section className="py-5 w-100">
         <div className="container">
           <div className="text-center mb-5">
-            <h2 className="h3 fw-bold">Features</h2>
-            <p className="text-muted">Explore the amazing features of our website</p>
+            <h2 className="h3 fw-bold">Özellikler</h2>
+            <p className="h4 text-muted m-2">Sunduğumuz İmkanlar</p>
           </div>
           <div className="row">
             <div className="col-md-4 mb-4">
               <div className="p-4 bg-white rounded shadow-sm">
-                <h3 className="h5 fw-bold mb-3">Feature One</h3>
-                <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3 className="h5 fw-bold mb-3">Puan & Yorum</h3>
+                <p className="text-muted">İşletmelerin ortalama puanlarını ve yorumlarını görebilirsiniz.</p>
               </div>
             </div>
             <div className="col-md-4 mb-4">
               <div className="p-4 bg-white rounded shadow-sm">
-                <h3 className="h5 fw-bold mb-3">Feature Two</h3>
-                <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3 className="h5 fw-bold mb-3">Öneri</h3>
+                <p className="text-muted">Arkaşlarınıza ve ailenize memnun kaldığınız işletmeleri önerebilirsiniz.</p>
               </div>
             </div>
             <div className="col-md-4 mb-4">
               <div className="p-4 bg-white rounded shadow-sm">
-                <h3 className="h5 fw-bold mb-3">Feature Three</h3>
-                <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3 className="h5 fw-bold mb-3">İndirim & Kampanya</h3>
+                <p className="text-muted">Kuponları ve indirimleri paylaşabilirsiniz ve boykotta devamlılık sağlanır.</p>
               </div>
             </div>
           </div>

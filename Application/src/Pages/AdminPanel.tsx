@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './AdminPanel.css';
+
+// Create a context for authentication
+const AuthContext = createContext({ isAuthenticated: false, login: () => {}, logout: () => {} });
 
 interface Business {
   id: number;
@@ -36,6 +39,7 @@ const types = {
 };
 
 const AdminPanel = () => {
+  const { isAuthenticated } = useContext(AuthContext);
   const [businesses, setBusinesses] = useState<Business[]>(initialBusinesses);
   const [editingBusiness, setEditingBusiness] = useState<Business | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -73,6 +77,10 @@ const AdminPanel = () => {
       business.location.toLowerCase().includes(searchTerm.toLowerCase())
     );
   });
+
+  if (!isAuthenticated) {
+    return <div>Access Denied. Please log in to access the Admin Panel.</div>;
+  }
 
   return (
     <div className="container mt-5">

@@ -13,7 +13,7 @@ function App() {
       <div className="bg-light min-vh-100 d-flex flex-column">
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
           <div className="container">
-            <Link className="navbar-brand text-white" to="/">Gönül Rahatlığı Rehberi</Link>
+            <Link className="navbar-brand text-white" to="/">Gönül Rahatlığı Platformu</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -22,9 +22,9 @@ function App() {
                 <li className="nav-item">
                   <Link className="nav-link active text-white" aria-current="page" to="/">Ana Sayfa</Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link text-white" to="/islemeler">İşletmeler</Link>
-                </li>
+                </li> */}
                 {/* <li className="nav-item">
                   <Link className="nav-link text-white" to="/iletisim">İletişim</Link>
                 </li> */}
@@ -41,7 +41,7 @@ function App() {
 
         <Routes>
         <Route path="/" element={<Home />} />
-          <Route path="/islemeler" element={<Company />} />
+          {/* <Route path="/islemeler" element={<Company />} /> */}
           {/* <Route path="/iletisim" element={<Contact />} /> */}
           <Route path="/oneri-sikayet" element={<Suggestion />} />
           <Route path="/hakkimizda" element={<About />} />

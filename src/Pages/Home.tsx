@@ -4,7 +4,7 @@ function Home() {
       <header className="bg-cover bg-center vh-100 w-100" style={{ backgroundImage: "url('https://source.unsplash.com/random')" }}>
         <div className="d-flex align-items-center justify-content-center h-100 bg-dark bg-opacity-50">
           <div className="text-center text-white">
-            <h1 className="display-4 fw-bold">Gönül Rahatlığı Rehberine Hoş Geldiniz</h1>
+            <h1 className="display-4 fw-bold">Gönül Rahatlığı Platformuna Hoş Geldiniz</h1>
             <ul className="list-unstyled lead">
               <li>Ürünlerini satın alırken, ürünlerin üretildiği şirketlerin politikalarını sorgulayın.</li>
               <li>Boykot ürünleri servis etmeyen ve kullanmayan işletmeleri web sitemizden sorgulayabilir ve destek olabilirsiniz.</li>
@@ -40,7 +40,7 @@ function Home() {
             <div className="col-md-4 mb-4">
               <div className="p-4 bg-white rounded shadow-sm">
                 <h3 className="h5 fw-bold mb-3">İndirim & Kampanya</h3>
-                <p className="text-muted">Kuponları ve indirimleri paylaşabilirsiniz ve boykotta devamlılık sağlanır.</p>
+                <p className="text-muted">Kuponları ve indirimleri bizimle paylaşabilir Kampanyalardan herkes yararlanabilir.</p>
               </div>
             </div>
           </div>

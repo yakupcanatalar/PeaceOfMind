@@ -1,0 +1,32 @@
+package com.atalar.software.model;
+
+public enum Type {
+    RESTORAN,
+    KAFE,
+    MARKET,
+    KASAP,
+    KUAFOR,
+    PASTANE,
+    ECZANE,
+    SPOR_SALONU,
+    OTEL,
+    KUTUPHANE,
+    SINEMA,
+    TIYATRO,
+    BAR,
+    GECE_KULUBU,
+    KITAPCI,
+    ELEKTRONIK_MAGAZA,
+    MOBILYA_MAGAZASI,
+    GIYIM_MAGAZASI,
+    AYAKKABI_MAGAZASI,
+    KUYUMCU,
+    OYUNCAK_MAGAZASI,
+    PET_SHOP,
+    ARAC_KIRALAMA,
+    BENZIN_ISTASYONU,
+    BANKA,
+    HASTANE,
+    DIS_HEKIMI,
+    GOZLUKCU
+}

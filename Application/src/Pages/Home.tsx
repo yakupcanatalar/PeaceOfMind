@@ -11,8 +11,8 @@ function Home() {
               <li>Sizde boykota destek veriyor ve ürünlerini satmıyorsanız bizimle <a href="/oneri-sikayet" className="text-decoration-underline">iletişime</a> geçin ve listemizde yerinizi alın.</li>
             </ul>
             <div className="mt-4">
-              <input type="text" className="form-control rounded-pill" placeholder="İşletme ara" style={{ padding: '0.5rem 1rem' }} />
-              <button className="btn btn-primary mt-2 rounded-pill" style={{ padding: '0.5rem 1rem' }}>Ara</button>
+              <input type="text" className="form-control" placeholder="İşletme ara" style={{ padding: '0.5rem 1rem' }} />
+              <button className="btn btn-primary mt-2" style={{ padding: '0.5rem 1rem' }}>Ara</button>
             </div>
           </div>
         </div>
@@ -26,19 +26,19 @@ function Home() {
           </div>
           <div className="row">
             <div className="col-md-4 mb-4">
-              <div className="p-4 bg-white rounded shadow-sm">
+              <div className="p-4 bg-white shadow-sm">
                 <h3 className="h5 fw-bold mb-3">Puan & Yorum</h3>
                 <p className="text-muted">İşletmelerin ortalama puanlarını ve yorumlarını görebilirsiniz.</p>
               </div>
             </div>
             <div className="col-md-4 mb-4">
-              <div className="p-4 bg-white rounded shadow-sm">
+              <div className="p-4 bg-white shadow-sm">
                 <h3 className="h5 fw-bold mb-3">Öneri</h3>
                 <p className="text-muted">Arkaşlarınıza ve ailenize memnun kaldığınız işletmeleri önerebilirsiniz.</p>
               </div>
             </div>
             <div className="col-md-4 mb-4">
-              <div className="p-4 bg-white rounded shadow-sm">
+              <div className="p-4 bg-white  shadow-sm">
                 <h3 className="h5 fw-bold mb-3">İndirim & Kampanya</h3>
                 <p className="text-muted">Kuponları ve indirimleri bizimle paylaşabilir Kampanyalardan herkes yararlanabilir.</p>
               </div>

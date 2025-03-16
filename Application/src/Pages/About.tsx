@@ -9,7 +9,7 @@ function About() {
       <h2 className="h4 mt-4">Vizyonumuz</h2>
       <p>Vizyonumuz, boykot ürünleri satan işletmelerin sayısını azaltmak ve etik değerlere uygun işletmelerin sayısını artırmaktır.</p>
       <h2 className="h4 mt-4">İletişim</h2>
-      <p>Bizimle iletişime geçmek için <a href="/contact" className="text-decoration-underline">buraya tıklayın</a>.</p>
+      <p>Bizimle iletişime geçmek için <a href="/oneri-sikayet" className="text-decoration-underline">buraya tıklayın</a>.</p>
     </div>
   );
 }

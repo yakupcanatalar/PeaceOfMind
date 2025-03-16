@@ -26,11 +26,11 @@ function Suggestion() {
       <h1 className="display-4">Öneri & Şikayet</h1>
       <p>Boykot ürünleri satan işletmelerin listeden kaldırıması için ya da web sitemizin daha iyiye gitmesi için önerileriniz varsa lütfen bizlerle iletişime geçin. Şikayet konusuna göre ekte dosya gönderebilirsiniz.Tüm fikirleniz değerlidir.</p>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="form-group col-6">
           <label className='p-2' htmlFor="name">Ad ve Soyad</label>
           <input
             type="text"
-            className="form-control form-control-sm rounded-pill"
+            className="form-control form-control-sm "
             id="name"
             name="name"
             value={form.name}
@@ -38,11 +38,11 @@ function Suggestion() {
             required
           />
         </div>
-        <div className="form-group mt-3">
+        <div className="form-group mt-3 col-6">
           <label className='p-2' htmlFor="email">Email</label>
           <input
             type="email"
-            className="form-control form-control-sm rounded-pill"
+            className="form-control form-control-sm"
             id="email"
             name="email"
             value={form.email}
@@ -50,11 +50,11 @@ function Suggestion() {
             required
           />
         </div>
-        <div className="form-group mt-3">
+        <div className="form-group mt-3 col-6">
           <label className='p-2' htmlFor="subject">Konu Başlığı</label>
           <input
             type="text"
-            className="form-control form-control-sm rounded-pill"
+            className="form-control form-control-sm"
             id="subject"
             name="subject"
             value={form.subject}
@@ -62,10 +62,10 @@ function Suggestion() {
             required
           />
         </div>
-        <div className="form-group mt-3">
+        <div className="form-group mt-3 col-6">
           <label className='p-2' htmlFor="message">Açıklama</label>
           <textarea
-            className="form-control form-control-sm rounded"
+            className="form-control form-control-sm"
             id="message"
             name="message"
             value={form.message}
@@ -74,7 +74,7 @@ function Suggestion() {
             rows={3}
           />
         </div>
-        <button type="submit" className="btn btn-primary mt-3 rounded-pill p-2">Gönder</button>
+        <button type="submit" className="btn btn-primary mt-3 p-2">Gönder</button>
       </form>
     </div>
   );

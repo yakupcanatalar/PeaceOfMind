@@ -1,4 +1,4 @@
-package com.atalar.software.model;
+package com.atalar.peace_of_mind.model;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;

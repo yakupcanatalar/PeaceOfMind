@@ -1,15 +1,13 @@
-package com.atalar.software;
+package com.atalar.peace_of_mind;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
-public class PieceApplication {
+public class PeaceOfMindApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(PieceApplication.class, args);
+		SpringApplication.run(PeaceOfMindApplication.class, args);
 	}
 
 }

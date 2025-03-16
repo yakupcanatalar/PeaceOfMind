@@ -1,7 +1,8 @@
-import React, { useState, useContext, createContext } from 'react';
+import React, { useState, useContext, useEffect, createContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './AdminPanel.css';
+import { getType, getSubType } from '../Services/Type'; // Assuming getSubType is imported
 
 // Create a context for authentication
 const AuthContext = createContext({ isAuthenticated: false, login: () => {}, logout: () => {} });
@@ -32,26 +33,32 @@ const cities = [
   ]}
 ];
 
-const types = {
-  Restaurant: ['Dönerci', 'Kebapçı', 'Balıkçı'],
-  Cafe: ['Kahve Çeşitleri', 'Pastane', 'Çay Bahçesi'],
-  Market: ['Süpermarket', 'Bakkal', 'Organik Market']
-};
-
 const AdminPanel = () => {
   const { isAuthenticated } = useContext(AuthContext);
   const [businesses, setBusinesses] = useState<Business[]>(initialBusinesses);
   const [editingBusiness, setEditingBusiness] = useState<Business | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [showForm, setShowForm] = useState(false);
+  const [types, setTypes]  = useState<string[]>([]); // To store the types
+  const [subtypes, setSubtypes] = useState<string[]>([]); // To store the subtypes based on selected type
 
-  const handleDelete = (id: number) => {
-    setBusinesses(businesses.filter(business => business.id !== id));
-  };
+  useEffect(() => {
+    // Fetch the types on mount
+    const fetchTypes = async () => {
+      const fetchedTypes = await getType();
+      setTypes(fetchedTypes);
+    };
+    fetchTypes();
+  }, []);
 
-  const handleEdit = (business: Business) => {
-    setEditingBusiness(business);
-    setShowForm(true);
+  const handleTypeChange = async (e: React.ChangeEvent<HTMLSelectElement>, setFieldValue: any) => {
+    const selectedType = e.target.value;
+    setFieldValue('type', selectedType);
+    setFieldValue('subtype', ''); // Reset the subtype when type changes
+
+    // Call getSubType to fetch subtypes based on the selected type
+    const fetchedSubtypes = await getSubType(selectedType);
+    setSubtypes(fetchedSubtypes);
   };
 
   const handleSubmit = (values: Business, { resetForm }: any) => {
@@ -78,8 +85,12 @@ const AdminPanel = () => {
     );
   });
 
-  if (!isAuthenticated) {
-    return <div>Access Denied. Please log in to access the Admin Panel.</div>;
+  function handleEdit(business: Business): void {
+    throw new Error('Function not implemented.');
+  }
+
+  function handleDelete(id: number): void {
+    throw new Error('Function not implemented.');
   }
 
   return (
@@ -157,12 +168,9 @@ const AdminPanel = () => {
                 </div>
                 <div className="form-group mt-3">
                   <label htmlFor="type">Tür</label>
-                  <Field as="select" name="type" className="form-control" onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
-                    setFieldValue('type', e.target.value);
-                    setFieldValue('subtype', '');
-                  }}>
-                    <option value="">Tür seçin</option>
-                    {Object.keys(types).map(type => (
+                  <Field as="select" name="type" className="form-control" onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleTypeChange(e, setFieldValue)}>
+                  <option value="">Tür seçin</option>
+                    {types.map(type => (
                       <option key={type} value={type}>{type}</option>
                     ))}
                   </Field>
@@ -172,7 +180,7 @@ const AdminPanel = () => {
                   <label htmlFor="subtype">Alt Tür</label>
                   <Field as="select" name="subtype" className="form-control">
                     <option value="">Alt tür seçin</option>
-                    {values.type && types[values.type as keyof typeof types].map(subtype => (
+                    {subtypes.map(subtype => (
                       <option key={subtype} value={subtype}>{subtype}</option>
                     ))}
                   </Field>
@@ -236,7 +244,7 @@ const AdminPanel = () => {
               <td><img src={business.logo} alt={business.name} style={{ width: '50px' }} /></td>
               <td>
                 <i className="btn btn-warning btn-sm me-2" onClick={() => handleEdit(business)}>Düzenle</i>
-                <i className="btn btn-danger btn-sm" onClick={() => handleDelete(business.id)}>Sil</i >
+                <i className="btn btn-danger btn-sm" onClick={() => handleDelete(business.id)}>Sil</i>
               </td>
             </tr>
           ))}

@@ -1,11 +1,11 @@
-import React, { useState, useContext, useEffect, createContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './AdminPanel.css';
 import { getType, getSubType } from '../Services/Type'; // Assuming getSubType is imported
 
 // Create a context for authentication
-const AuthContext = createContext({ isAuthenticated: false, login: () => {}, logout: () => {} });
+// const AuthContext = createContext({ isAuthenticated: false, login: () => {}, logout: () => {} });
 
 interface Business {
   id: number;
@@ -34,7 +34,6 @@ const cities = [
 ];
 
 const AdminPanel = () => {
-  const { isAuthenticated } = useContext(AuthContext);
   const [businesses, setBusinesses] = useState<Business[]>(initialBusinesses);
   const [editingBusiness, setEditingBusiness] = useState<Business | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -85,13 +84,13 @@ const AdminPanel = () => {
     );
   });
 
-  function handleEdit(business: Business): void {
-    throw new Error('Function not implemented.');
-  }
+  // function handleEdit(): void {
+  //   throw new Error('Function not implemented.');
+  // }
 
-  function handleDelete(id: number): void {
-    throw new Error('Function not implemented.');
-  }
+  // function handleDelete(): void {
+  //   throw new Error('Function not implemented.');
+  // }
 
   return (
     <div className="container mt-5">
@@ -243,8 +242,8 @@ const AdminPanel = () => {
               <td>{business.location}</td>
               <td><img src={business.logo} alt={business.name} style={{ width: '50px' }} /></td>
               <td>
-                <i className="btn btn-warning btn-sm me-2" onClick={() => handleEdit(business)}>Düzenle</i>
-                <i className="btn btn-danger btn-sm" onClick={() => handleDelete(business.id)}>Sil</i>
+                {/* <i className="btn btn-warning btn-sm me-2" onClick={() => handleEdit(business)}>Düzenle</i>
+                <i className="btn btn-danger btn-sm" onClick={() => handleDelete(business.id)}>Sil</i> */}
               </td>
             </tr>
           ))}

@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './index.css';
-import Company from './Pages/Company';
 import Suggestion from './Pages/Suggestion';
 import Home from './Pages/Home';
 import About from './Pages/About';
-import Contact from './Pages/Contact';
 import AdminPanel from './Pages/AdminPanel';
 
 function App() {
